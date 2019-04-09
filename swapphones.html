@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<body>
+        <head>
+                <title>NBGS Easy Phone Swapper</title>
+                <link rel="stylesheet" type="text/css" href="./css/theme.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+        <body>
+                <h1>NBGS Easy Phone Swapper</h1>
+                        <div>
+                <form action="./swapphones.php">
+                <label for ="EXT1">Your Ext#:</label>
+                <input type="text" id=EXT1 name="swap1" value=""><br>
+                <label for ="EXT2">Swap Ext#:</label>
+                <input type="text" id=EXT2 name="swap2" value=""><br>
 
-<form action="./swapphones.php">
-Your Ext#: <input type="text" name="swap1" value=""><br>
-Swap Ext#: <input type="text" name="swap2" value=""><br>
-<input type="submit" value="Submit">
-</form>
-
-<p>Click the "Submit" button.</p>
-
-</body>
+                <input type="submit" value="Submit">
+                </form>
+                </div>
+        </body>
 </html>
