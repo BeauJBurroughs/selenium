@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import time
 import selenium
 from selenium import webdriver
@@ -13,12 +15,12 @@ import os
 options = Options()
 options.headless = True
 driver = webdriver.Firefox(options=options)
-url1 = "https://mya.dominionenergy.com/?accountnumber=1508894894&businessrelationshipid=4216691"
+url1 = "https://mya.dominionenergy.com
 driver.get(url1)
 elem = driver.find_element_by_name("USER")
-elem.send_keys("#############")
+elem.send_keys("#############")                      Dont Forget to change this!
 elem = driver.find_element_by_name("PASSWORD")
-elem.send_keys("###############")
+elem.send_keys("###############")                    Dont forget to change this too!
 elem.send_keys(Keys.RETURN)
 time.sleep(2)
 #Selenium get screenshot
