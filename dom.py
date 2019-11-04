@@ -3,6 +3,9 @@
 import time
 import selenium
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 from bs4 import BeautifulSoup
@@ -25,7 +28,7 @@ def load_cookie(driver, path):
              driver.add_cookie(cookie)
 def dom():
     options = Options()
-    options.headless = True
+    options.headless = False
     driver = webdriver.Firefox(options=options)
     url= "https://mya.dominionenergy.com"
     driver.get(url)
@@ -34,7 +37,10 @@ def dom():
     elem = driver.find_element_by_name("PASSWORD")
     elem.send_keys("##########")                                Dont forget to change this
     elem.send_keys(Keys.RETURN)
-    time.sleep(2)
+    try:
+      element = WebDriverWait(driver,60).until(EC.presence_of_element_located((By.ID, "_MainView1")))
+    finally:
+      time.sleep(2)
     #Selenium get screenshot
     driver.save_screenshot('../www/dom.png')
     #Selenium hands the page source to Beautiful Soup
